@@ -7,8 +7,9 @@ message(STATUS "Compiling shader.vert...")
 message(STATUS $ENV{VULKAN_SDK}/bin/glslc)
 
 execute_process(COMMAND
-  $ENV{VULKAN_SDK}/bin/glslang
+  $ENV{VULKAN_SDK}/bin/glslangValidator
   ${CMAKE_CURRENT_SOURCE_DIR}/shaders/shader.vert
+  -V
   -o ${CMAKE_CURRENT_SOURCE_DIR}/shaders/shader.vert.spv
   RESULT_VARIABLE result
 )
