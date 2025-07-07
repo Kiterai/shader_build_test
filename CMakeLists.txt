@@ -4,7 +4,7 @@ project(test)
 
 message(STATUS "Compiling shader.vert...")
 
-message(STATUS "$ENV{VULKAN_SDK}/bin/glslc")
+message(STATUS $ENV{VULKAN_SDK}/bin/glslc)
 
 execute_process(COMMAND
   $ENV{VULKAN_SDK}/bin/glslc
