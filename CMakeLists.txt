@@ -7,6 +7,10 @@ message(STATUS "Compiling shader.vert...")
 message(STATUS $ENV{VULKAN_SDK}/bin/glslc)
 
 execute_process(COMMAND
+  ls $ENV{VULKAN_SDK}/bin
+)
+
+execute_process(COMMAND
   $ENV{VULKAN_SDK}/bin/glslangValidator
   ${CMAKE_CURRENT_SOURCE_DIR}/shaders/shader.vert
   -V
@@ -16,3 +20,7 @@ execute_process(COMMAND
 if(NOT result EQUAL "0")
     message( FATAL_ERROR "Failed to compile shader.vert")
 endif()
+
+execute_process(COMMAND
+  ls ${CMAKE_CURRENT_SOURCE_DIR}/shaders
+)
